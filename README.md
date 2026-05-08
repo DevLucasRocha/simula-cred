@@ -1,11 +1,11 @@
-# 🏦 SimulaCred 
+# 🏦 Smart Crédito 
 # Plataforma de Captação e Conversão B2B2C
 
 Uma aplicação Front-end robusta e responsiva desenvolvida para simulação de crédito e captação qualificada de leads financeiros. Construída com foco em alta conversão, experiência do usuário (UI/UX) e código modular preparado para escala corporativa.
 
 ## 🚀 Visão Geral do Produto
 
-O SimulaCred resolve um gargalo crítico no mercado de correspondentes bancários: a atração de clientes através de transparência e agilidade. O sistema oferece duas interfaces dinâmicas (Views):
+O Smart Crédito resolve um gargalo crítico no mercado de correspondentes bancários: a atração de clientes através de transparência e agilidade. O sistema oferece duas interfaces dinâmicas (Views):
 
 * **Visão do Cliente (Conversão):** Uma Landing Page intuitiva com cálculo de juros em tempo real e formulário otimizado para retenção do lead via WhatsApp.
 * **Visão do Gestor (Dashboard):** Painel administrativo para acompanhamento de métricas de vendas, ticket médio e volume de captação através de gráficos dinâmicos.

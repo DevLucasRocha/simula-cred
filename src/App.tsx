@@ -95,7 +95,7 @@ const App = () => {
 
     // Montar mensagem de WhatsApp com dados da simulação
     // Dica de Sênior: Colocamos o número que ele digitou no texto, caso o WhatsApp que ele esteja usando seja de outra pessoa.
-    const textoWhatsApp = `Olá! Meu nome é ${leadForm.name.trim()}.\nContato deixado no site: ${leadForm.whatsapp.trim()}\n\nAcabei de fazer uma simulação no SimulaCred:\n- Valor: *${valorFormatado}*\n- Parcelas: *${simulatorState.installments}x*\n\nGostaria de garantir minha taxa!`;
+    const textoWhatsApp = `Olá! Meu nome é ${leadForm.name.trim()}.\nContato deixado no site: ${leadForm.whatsapp.trim()}\n\nAcabei de fazer uma simulação no Smart Crédito:\n- Valor: *${valorFormatado}*\n- Parcelas: *${simulatorState.installments}x*\n\nGostaria de garantir minha taxa!`;
 
     // Criar URL de API do WhatsApp para o número da empresa
     const url = `https://wa.me/${numeroDaEmpresa}?text=${encodeURIComponent(textoWhatsApp)}`;
@@ -115,7 +115,7 @@ const App = () => {
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
-              SimulaCred
+              Smart Crédito
             </p>
             <h1 className="text-xl font-bold md:text-2xl">
               Captação Inteligente de Empréstimos
