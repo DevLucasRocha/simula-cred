@@ -1,0 +1,11 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "tsconfig.json": "tsconfig.*.json, tsconfig.*.tsbuildinfo",
+    "vite.config.ts": "tailwind.config.*, postcss.config.*, eslint.config.*, prettier.config.*, .prettierrc*",
+    "*.ts": "${capture}.js, ${capture}.d.ts",
+    "*.tsx": "${capture}.ts, ${capture}.js, ${capture}.css"
+  }
+}
