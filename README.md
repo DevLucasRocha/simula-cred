@@ -1,4 +1,5 @@
-# 🏦 Smart Crédito | Plataforma de Captação e Conversão B2B2C
+# 🏦 Smart Crédito
+# Plataforma de Captação e Conversão B2B2C
 
 **[🌐 Acessar Aplicação em Produção (Deploy na Cloudflare)](https://smart-credito.codeline.workers.dev/)**
 
