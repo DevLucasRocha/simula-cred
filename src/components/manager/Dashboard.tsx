@@ -76,7 +76,6 @@ const Dashboard = ({ metrics, leads, rangeData, trendData }: DashboardProps) => 
           </ResponsiveContainer>
         </article>
 {/* Renderizar gráfico de leads nos últimos 7 dias */}
-        <article className="h-[340px] rounded-2xl border border-slate-200 bg-slate-50
         <article className="h-[340px] rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800">
           <h3 className="mb-3 text-sm font-semibold">Leads nos Ultimos 7 Dias</h3>
           <ResponsiveContainer width="100%" height="90%">
@@ -95,9 +94,8 @@ const Dashboard = ({ metrics, leads, rangeData, trendData }: DashboardProps) => 
             </LineChart>
           </ResponsiveContainer>
         </article>
+      </div>
       {/* Renderizar tabela dos últimos leads captados */}
-      <article className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50
-
       <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
         <div className="border-b border-slate-200 px-4 py-3 dark:border-slate-700">
           <h3 className="font-semibold">Ultimos Leads</h3>

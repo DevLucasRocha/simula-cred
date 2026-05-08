@@ -20,6 +20,9 @@ const LeadForm = ({ values, successMessage, onChange, onSubmit }: LeadFormProps)
     <form onSubmit={handleSubmit} className="mt-6 space-y-3">
       {/* Capturar nome do cliente */}
       <input
+        id="lead-name"
+        name="name"
+        aria-label="Nome completo"
         type="text"
         placeholder="Nome"
         value={values.name}
@@ -28,6 +31,9 @@ const LeadForm = ({ values, successMessage, onChange, onSubmit }: LeadFormProps)
       />
       {/* Capturar número de WhatsApp do cliente */}
       <input
+        id="lead-whatsapp"
+        name="whatsapp"
+        aria-label="Número do WhatsApp"
         type="tel"
         placeholder="WhatsApp"
         value={values.whatsapp}

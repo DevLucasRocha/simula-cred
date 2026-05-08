@@ -41,6 +41,8 @@ const SimulatorCard = ({
           </strong>
         </div>
         <input
+          id="simulator-amount"
+          aria-label="Valor do empréstimo"
           type="range"
           min={1000}
           max={50000}
@@ -58,6 +60,8 @@ const SimulatorCard = ({
           <strong className="text-brand-500">{simulatorState.installments}x</strong>
         </div>
         <input
+          id="simulator-installments"
+          aria-label="Número de parcelas"
           type="range"
           min={12}
           max={60}
