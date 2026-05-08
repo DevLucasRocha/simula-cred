@@ -1,0 +1,6 @@
+name = "smart-credito"
+compatibility_date = "2024-05-08"
+
+[assets]
+directory = "dist"
+not_found_handling = "single-page-application"
