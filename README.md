@@ -1,4 +1,5 @@
-# 🏦 SimulaCred | Plataforma de Captação e Conversão B2B2C
+# 🏦 SimulaCred 
+# Plataforma de Captação e Conversão B2B2C
 
 Uma aplicação Front-end robusta e responsiva desenvolvida para simulação de crédito e captação qualificada de leads financeiros. Construída com foco em alta conversão, experiência do usuário (UI/UX) e código modular preparado para escala corporativa.
 
