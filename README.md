@@ -1,5 +1,6 @@
-# 🏦 Smart Crédito 
-# Plataforma de Captação e Conversão B2B2C
+# 🏦 Smart Crédito | Plataforma de Captação e Conversão B2B2C
+
+**[🌐 Acessar Aplicação em Produção (Deploy na Cloudflare)](https://smart-credito.codeline.workers.dev/)**
 
 Uma aplicação Front-end robusta e responsiva desenvolvida para simulação de crédito e captação qualificada de leads financeiros. Construída com foco em alta conversão, experiência do usuário (UI/UX) e código modular preparado para escala corporativa.
 
@@ -24,13 +25,15 @@ O projeto foi construído utilizando as melhores práticas do ecossistema JavaSc
 
 O front-end foi arquitetado de forma agnóstica, permitindo fácil integração via APIs RESTful ou GraphQL com backends robustos (como Golang, Node.js ou Python).
 
-O repositório está otimizado para pipelines de CI/CD e deploy contínuo em serviços de Edge Computing (como Cloudflare Pages), ou instâncias nativas em provedores Cloud como **AWS, Microsoft Azure ou Oracle Cloud Infrastructure (OCI)**.
+O repositório está otimizado para pipelines de CI/CD e deploy contínuo em serviços de Edge Computing, estando atualmente provisionado via **Cloudflare Workers/Pages**. A estrutura também é compatível com instâncias nativas em provedores Cloud como AWS, Microsoft Azure ou Oracle Cloud Infrastructure (OCI).
 
 ## ⚙️ Como executar localmente
 
+Siga os passos abaixo para rodar a aplicação em seu ambiente de desenvolvimento:
+
 1. Clone este repositório em sua máquina.
-2. Acesse a raiz da pasta `simula-cred` através do seu terminal.
-3. Instale as dependências do projeto:
+2. Acesse a raiz da pasta do projeto através do seu terminal.
+3. Instale as dependências:
    ```bash
    npm install
    npm run build
