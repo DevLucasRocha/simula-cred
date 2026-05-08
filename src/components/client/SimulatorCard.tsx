@@ -24,9 +24,9 @@ const SimulatorCard = ({
   onLeadFormChange,
   onLeadSubmit,
 }: SimulatorCardProps) => (
-  <article className="order-first rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-md dark:border-slate-700 dark:bg-slate-800 lg:order-none">
+  <article className="order-first rounded-2xl border border-stone-200 bg-orange-50 p-5 shadow-md dark:border-slate-700 dark:bg-slate-800 lg:order-none">
     <h2 className="text-xl font-bold">Simule seu emprestimo</h2>
-    <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+    <p className="mt-1 text-sm text-stone-600 dark:text-slate-300">
       Ajuste valor e parcelas para ver o custo em tempo real.
     </p>
 
@@ -74,9 +74,9 @@ const SimulatorCard = ({
     </div>
 
     {/* Exibir resumo do cálculo de simulação */}
-    <div className="mt-6 grid grid-cols-1 gap-3 rounded-xl bg-slate-100 p-4 dark:bg-slate-900 sm:grid-cols-2">
+    <div className="mt-6 grid grid-cols-1 gap-3 rounded-xl bg-stone-100 p-4 dark:bg-slate-900 sm:grid-cols-2">
       <div>
-        <p className="text-xs uppercase text-slate-500 dark:text-slate-400">
+        <p className="text-xs uppercase text-stone-500 dark:text-slate-400">
           Valor da Parcela
         </p>
         <p className="text-xl font-bold">
@@ -84,7 +84,7 @@ const SimulatorCard = ({
         </p>
       </div>
       <div>
-        <p className="text-xs uppercase text-slate-500 dark:text-slate-400">
+        <p className="text-xs uppercase text-stone-500 dark:text-slate-400">
           Total a Pagar
         </p>
         <p className="text-xl font-bold">

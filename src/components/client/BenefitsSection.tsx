@@ -26,11 +26,11 @@ const BenefitsSection = () => (
     {benefits.map((benefit) => (
       <article
         key={benefit.title}
-        className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800"
+        className="rounded-2xl border border-stone-200 bg-orange-50 p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800"
       >
         <benefit.icon className="h-6 w-6 text-brand-500" />
         <h3 className="mt-3 text-lg font-semibold">{benefit.title}</h3>
-        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+        <p className="mt-1 text-sm text-stone-600 dark:text-slate-300">
           {benefit.description}
         </p>
       </article>

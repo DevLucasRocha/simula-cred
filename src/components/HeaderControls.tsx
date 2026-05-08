@@ -20,7 +20,7 @@ const HeaderControls = ({
       <button
         type="button"
         onClick={onToggleTheme}
-        className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 shadow-sm transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+        className="inline-flex items-center gap-2 rounded-xl border border-stone-200 bg-orange-50 px-3 py-2 text-xs font-semibold text-stone-700 shadow-sm transition hover:bg-stone-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
       >
         {isDarkMode ? <Sun size={16} /> : <Moon size={16} />}
         {isDarkMode ? "Modo Claro" : "Modo Escuro"}

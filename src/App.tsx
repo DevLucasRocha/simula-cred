@@ -82,10 +82,10 @@ const App = () => {
     };
 
     setLeads((prev) => [newLead, ...prev]);
-    
+
     // 2. Prepara o envio da mensagem
     // Coloque AQUI o seu número (com 55, DDD e o número). Ex: 5598912345678
-    const numeroDaEmpresa = "5598999999999"; 
+    const numeroDaEmpresa = "5598999999999";
 
     // Formatar valor da simulação para o padrão brasileiro
     const valorFormatado = new Intl.NumberFormat("pt-BR", {
@@ -96,22 +96,22 @@ const App = () => {
     // Montar mensagem de WhatsApp com dados da simulação
     // Dica de Sênior: Colocamos o número que ele digitou no texto, caso o WhatsApp que ele esteja usando seja de outra pessoa.
     const textoWhatsApp = `Olá! Meu nome é ${leadForm.name.trim()}.\nContato deixado no site: ${leadForm.whatsapp.trim()}\n\nAcabei de fazer uma simulação no SimulaCred:\n- Valor: *${valorFormatado}*\n- Parcelas: *${simulatorState.installments}x*\n\nGostaria de garantir minha taxa!`;
-    
+
     // Criar URL de API do WhatsApp para o número da empresa
     const url = `https://wa.me/${numeroDaEmpresa}?text=${encodeURIComponent(textoWhatsApp)}`;
 
     // Limpar formulário e abrir WhatsApp em nova aba
     setLeadForm(initialLeadForm);
     setSuccessMessage("Redirecionando para o nosso WhatsApp...");
-    
+
     window.open(url, "_blank");
   };
 
   return (
     // Renderizar container principal com suporte a tema claro/escuro
-    <div className="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-50 transition-colors duration-300">
+    <div className="min-h-screen bg-stone-100 dark:bg-slate-900 text-stone-900 dark:text-slate-50 transition-colors duration-300">
       {/* Renderizar cabeçalho com logo e controles */}
-      <header className="border-b border-slate-200 bg-slate-50/90 p-4 backdrop-blur dark:border-slate-700 dark:bg-slate-800/80 md:p-6">
+      <header className="border-b border-stone-200 bg-orange-50/90 p-4 backdrop-blur dark:border-slate-700 dark:bg-slate-800/80 md:p-6">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
@@ -159,13 +159,17 @@ const App = () => {
             />
 
             <div className="space-y-5">
-              <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800">
+              <article className="rounded-2xl border border-stone-200 bg-orange-50 p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800">
                 <h2 className="text-2xl font-bold leading-tight">
-                  Simule sua proposta com clareza e converta mais rapido
+                  Simule sua proposta com clareza
+                  <br />
+                  e converta mais rapido
                 </h2>
-                <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
+                <p className="mt-3 text-sm text-stone-600 dark:text-slate-300">
                   Plataforma B2B2C para parceiros financeiros captarem leads
-                  qualificados com jornada simples, mobile-first e orientada a
+                  qualificados
+                  <br />
+                  com jornada simples, mobile-first e orientada a
                   conversao.
                 </p>
               </article>
@@ -175,13 +179,13 @@ const App = () => {
         </main>
       ) // Renderizar visualização do gestor com painel de métricas
         : (
-        <Dashboard
-          metrics={metrics}
-          leads={leads}
-          rangeData={simulationsByRange}
-          trendData={leadsLast7Days}
-        />
-      )}
+          <Dashboard
+            metrics={metrics}
+            leads={leads}
+            rangeData={simulationsByRange}
+            trendData={leadsLast7Days}
+          />
+        )}
     </div>
   );
 };

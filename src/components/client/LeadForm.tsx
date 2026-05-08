@@ -27,7 +27,7 @@ const LeadForm = ({ values, successMessage, onChange, onSubmit }: LeadFormProps)
         placeholder="Nome"
         value={values.name}
         onChange={(event) => onChange({ ...values, name: event.target.value })}
-        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-50"
+        className="w-full rounded-xl border border-stone-200 bg-orange-50 px-3 py-2 text-sm text-stone-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-50"
       />
       {/* Capturar número de WhatsApp do cliente */}
       <input
@@ -38,7 +38,7 @@ const LeadForm = ({ values, successMessage, onChange, onSubmit }: LeadFormProps)
         placeholder="WhatsApp"
         value={values.whatsapp}
         onChange={(event) => onChange({ ...values, whatsapp: event.target.value })}
-        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-50"
+        className="w-full rounded-xl border border-stone-200 bg-orange-50 px-3 py-2 text-sm text-stone-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-50"
       />
       {/* Renderizar botão de envio para WhatsApp */}
       <button
@@ -48,7 +48,7 @@ const LeadForm = ({ values, successMessage, onChange, onSubmit }: LeadFormProps)
         Garantir essa Taxa via WhatsApp
       </button>
       {/* Exibir aviso de isenção de responsabilidade */}
-      <p className="text-xs text-slate-500 dark:text-slate-400">
+      <p className="text-xs text-stone-500 dark:text-slate-400">
         *As taxas sao estimadas e podem variar de acordo com a analise de credito
         e CPF.
       </p>
