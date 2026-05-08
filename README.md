@@ -33,5 +33,6 @@ O repositório está otimizado para pipelines de CI/CD e deploy contínuo em ser
 3. Instale as dependências do projeto:
    ```bash
    npm install
+   npm run build
    npm run dev
 4. Clique no link do localhost gerado no terminal para visualizar a aplicação.
