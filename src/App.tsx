@@ -16,6 +16,7 @@ const initialLeadForm: LeadFormState = {
 };
 
 const App = () => {
+  // Gerenciar estado da aplicação (modo de visualização, tema, simulador)
   const [viewMode, setViewMode] = useState<ViewMode>("client");
   const [themeMode, setThemeMode] = useState<ThemeMode>("light");
   const [simulatorState, setSimulatorState] = useState<SimulatorState>({
@@ -30,10 +31,12 @@ const App = () => {
   const isDarkMode = themeMode === "dark";
   const isManagerView = viewMode === "manager";
 
+  // Aplicar classe dark ao elemento raiz quando tema escuro for ativado
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
   }, [isDarkMode]);
 
+  // Calcular resultado da simulação baseado no estado atual
   const simulationResult = useMemo(
     () =>
       calculateSimulation(
@@ -44,6 +47,7 @@ const App = () => {
     [simulatorState],
   );
 
+  // Calcular métricas agregadas dos leads para o painel do gestor
   const metrics: ManagerMetrics = useMemo(() => {
     const totalSimulated = leads.reduce(
       (accumulator, lead) => accumulator + lead.simulatedAmount,
@@ -60,35 +64,61 @@ const App = () => {
     };
   }, [leads]);
 
+  // Processar envio de formulário de lead e redirecionar para WhatsApp
   const handleLeadSubmit = () => {
     if (!leadForm.name.trim() || !leadForm.whatsapp.trim()) {
       return;
     }
 
+    // Criar novo lead com informações da simulação
+    // 1. Salva o lead no painel (guarda o número DO CLIENTE na tabela)
     const newLead: Lead = {
       id: `lead-${Date.now()}`,
       name: leadForm.name.trim(),
-      whatsapp: leadForm.whatsapp.trim(),
+      whatsapp: leadForm.whatsapp.trim(), // <--- Contato do cliente
       simulatedAmount: simulatorState.amount,
       installments: simulatorState.installments,
       createdAt: new Date().toISOString(),
     };
 
     setLeads((prev) => [newLead, ...prev]);
+    
+    // 2. Prepara o envio da mensagem
+    // Coloque AQUI o seu número (com 55, DDD e o número). Ex: 5598912345678
+    const numeroDaEmpresa = "5598999999999"; 
+
+    // Formatar valor da simulação para o padrão brasileiro
+    const valorFormatado = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(simulatorState.amount);
+
+    // Montar mensagem de WhatsApp com dados da simulação
+    // Dica de Sênior: Colocamos o número que ele digitou no texto, caso o WhatsApp que ele esteja usando seja de outra pessoa.
+    const textoWhatsApp = `Olá! Meu nome é ${leadForm.name.trim()}.\nContato deixado no site: ${leadForm.whatsapp.trim()}\n\nAcabei de fazer uma simulação no SimulaCred:\n- Valor: *${valorFormatado}*\n- Parcelas: *${simulatorState.installments}x*\n\nGostaria de garantir minha taxa!`;
+    
+    // Criar URL de API do WhatsApp para o número da empresa
+    const url = `https://wa.me/${numeroDaEmpresa}?text=${encodeURIComponent(textoWhatsApp)}`;
+
+    // Limpar formulário e abrir WhatsApp em nova aba
     setLeadForm(initialLeadForm);
-    setSuccessMessage("Proposta enviada!");
+    setSuccessMessage("Redirecionando para o nosso WhatsApp...");
+    
+    window.open(url, "_blank");
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 transition-colors duration-300">
-      <header className="border-b border-slate-200 bg-white/90 p-4 backdrop-blur dark:border-slate-700 dark:bg-slate-800/80 md:p-6">
+    // Renderizar container principal com suporte a tema claro/escuro
+    <div className="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-50 transition-colors duration-300">
+      {/* Renderizar cabeçalho com logo e controles */}
+      <header className="border-b border-slate-200 bg-slate-50/90 p-4 backdrop-blur dark:border-slate-700 dark:bg-slate-800/80 md:p-6">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
               SimulaCred
             </p>
             <h1 className="text-xl font-bold md:text-2xl">
-              MVP de Captação Inteligente de Empréstimos
+              Captação Inteligente de Empréstimos
             </h1>
           </div>
           <HeaderControls
@@ -105,6 +135,7 @@ const App = () => {
       </header>
 
       {viewMode === "client" ? (
+        // Renderizar visualização do cliente com simulador e benefícios
         <main className="mx-auto w-full max-w-7xl p-4 md:p-8">
           <section className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
             <SimulatorCard
@@ -142,7 +173,8 @@ const App = () => {
             </div>
           </section>
         </main>
-      ) : (
+      ) // Renderizar visualização do gestor com painel de métricas
+        : (
         <Dashboard
           metrics={metrics}
           leads={leads}

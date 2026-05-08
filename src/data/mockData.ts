@@ -4,6 +4,7 @@ import {
   ValueRangeSimulation,
 } from "../types/domain";
 
+// Exportar leads iniciais para simulação do painel do gestor
 export const initialLeads: Lead[] = [
   {
     id: "lead-1",
@@ -31,6 +32,7 @@ export const initialLeads: Lead[] = [
   },
 ];
 
+// Exportar simulações agrupadas por faixa de valor para o gráfico
 export const simulationsByRange: ValueRangeSimulation[] = [
   { range: "1k-10k", simulations: 38 },
   { range: "10k-20k", simulations: 29 },
@@ -38,6 +40,7 @@ export const simulationsByRange: ValueRangeSimulation[] = [
   { range: "30k-40k", simulations: 17 },
   { range: "40k-50k", simulations: 9 },
 ];
+// Exportar tendência de leads dos últimos 7 dias para análise
 
 export const leadsLast7Days: LeadsTrendDataPoint[] = [
   { day: "Sab", leads: 14 },

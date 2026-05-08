@@ -24,7 +24,9 @@ interface DashboardProps {
   trendData: LeadsTrendDataPoint[];
 }
 
+// Renderizar painel do gestor com métricas e gráficos de leads
 const Dashboard = ({ metrics, leads, rangeData, trendData }: DashboardProps) => {
+  // Organizar e formatar cartões de métricas
   const cards = [
     { title: "Leads Captados Hoje", value: String(metrics.leadsToday) },
     { title: "Valor Simulado", value: formatCurrencyBRL(metrics.totalSimulated) },
@@ -45,10 +47,11 @@ const Dashboard = ({ metrics, leads, rangeData, trendData }: DashboardProps) => 
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {/* Renderizar cartões de métricas do gestor */}
         {cards.map((card) => (
           <article
             key={card.title}
-            className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-800"
+            className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm dark:border-slate-700 dark:bg-slate-800"
           >
             <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
               {card.title}
@@ -59,7 +62,8 @@ const Dashboard = ({ metrics, leads, rangeData, trendData }: DashboardProps) => 
       </div>
 
       <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
-        <article className="h-[340px] rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800">
+        {/* Renderizar gráfico de simulações por faixa de valor */}
+        <article className="h-[340px] rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
           <h3 className="mb-3 text-sm font-semibold">Simulacoes por Faixa de Valor</h3>
           <ResponsiveContainer width="100%" height="90%">
             <BarChart data={rangeData}>
@@ -71,7 +75,8 @@ const Dashboard = ({ metrics, leads, rangeData, trendData }: DashboardProps) => 
             </BarChart>
           </ResponsiveContainer>
         </article>
-
+{/* Renderizar gráfico de leads nos últimos 7 dias */}
+        <article className="h-[340px] rounded-2xl border border-slate-200 bg-slate-50
         <article className="h-[340px] rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800">
           <h3 className="mb-3 text-sm font-semibold">Leads nos Ultimos 7 Dias</h3>
           <ResponsiveContainer width="100%" height="90%">
@@ -90,7 +95,8 @@ const Dashboard = ({ metrics, leads, rangeData, trendData }: DashboardProps) => 
             </LineChart>
           </ResponsiveContainer>
         </article>
-      </div>
+      {/* Renderizar tabela dos últimos leads captados */}
+      <article className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50
 
       <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
         <div className="border-b border-slate-200 px-4 py-3 dark:border-slate-700">

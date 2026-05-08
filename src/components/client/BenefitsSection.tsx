@@ -1,5 +1,6 @@
 import { BadgeCheck, HandCoins, Wallet } from "lucide-react";
 
+// Dados dos benefícios principais da plataforma
 const benefits = [
   {
     title: "Dinheiro rápido",
@@ -18,12 +19,14 @@ const benefits = [
   },
 ];
 
+// Renderizar seção de benefícios com cards informativos
 const BenefitsSection = () => (
   <section className="grid gap-4">
+    {/* Iterar e exibir cada benefício em card */}
     {benefits.map((benefit) => (
       <article
         key={benefit.title}
-        className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800"
+        className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800"
       >
         <benefit.icon className="h-6 w-6 text-brand-500" />
         <h3 className="mt-3 text-lg font-semibold">{benefit.title}</h3>

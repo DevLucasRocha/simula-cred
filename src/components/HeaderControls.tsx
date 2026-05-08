@@ -7,6 +7,7 @@ interface HeaderControlsProps {
   onToggleView: () => void;
 }
 
+// Renderizar botões de controle do tema e modo de visualização no cabeçalho
 const HeaderControls = ({
   isDarkMode,
   isManagerView,
@@ -15,14 +16,16 @@ const HeaderControls = ({
 }: HeaderControlsProps) => {
   return (
     <div className="flex items-center gap-2">
+      {/* Renderizar botão de alternância de tema */}
       <button
         type="button"
         onClick={onToggleTheme}
-        className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 shadow-sm transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+        className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 shadow-sm transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
       >
         {isDarkMode ? <Sun size={16} /> : <Moon size={16} />}
         {isDarkMode ? "Modo Claro" : "Modo Escuro"}
       </button>
+      {/* Renderizar botão de alternância de visualização (cliente/gestor) */}
       <button
         type="button"
         onClick={onToggleView}
