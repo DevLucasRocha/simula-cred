@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Github, Linkedin } from "lucide-react";
 import HeaderControls from "./components/HeaderControls";
 import BenefitsSection from "./components/client/BenefitsSection";
 import SimulatorCard from "./components/client/SimulatorCard";
@@ -71,7 +72,7 @@ const App = () => {
     }
 
     // Criar novo lead com informações da simulação
-    // 1. Salva o lead no painel (guarda o número DO CLIENTE na tabela)
+    // 1. Salvar lead no painel (guardar número do cliente na tabela)
     const newLead: Lead = {
       id: `lead-${Date.now()}`,
       name: leadForm.name.trim(),
@@ -83,8 +84,8 @@ const App = () => {
 
     setLeads((prev) => [newLead, ...prev]);
 
-    // 2. Prepara o envio da mensagem
-    // Coloque AQUI o seu número (com 55, DDD e o número). Ex: 5598912345678
+    // 2. Preparar envio da mensagem
+    // Colocar aqui o seu número (com 55, DDD e o número). Ex: 5598912345678
     const numeroDaEmpresa = "5598999999999";
 
     // Formatar valor da simulação para o padrão brasileiro
@@ -94,7 +95,7 @@ const App = () => {
     }).format(simulatorState.amount);
 
     // Montar mensagem de WhatsApp com dados da simulação
-    // Dica de Sênior: Colocamos o número que ele digitou no texto, caso o WhatsApp que ele esteja usando seja de outra pessoa.
+    // Dica de Sênior: Colocar número que ele digitou no texto, caso o WhatsApp que ele esteja usando seja de outra pessoa.
     const textoWhatsApp = `Olá! Meu nome é ${leadForm.name.trim()}.\nContato deixado no site: ${leadForm.whatsapp.trim()}\n\nAcabei de fazer uma simulação no Smart Crédito:\n- Valor: *${valorFormatado}*\n- Parcelas: *${simulatorState.installments}x*\n\nGostaria de garantir minha taxa!`;
 
     // Criar URL de API do WhatsApp para o número da empresa
@@ -186,7 +187,31 @@ const App = () => {
             trendData={leadsLast7Days}
           />
         )}
-    </div>
+      <footer className="border-t border-slate-200 dark:border-slate-700 bg-stone-100 dark:bg-slate-900">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 p-4 sm:flex-row md:p-6">
+          <p className="text-sm text-stone-600 dark:text-slate-300">
+            Desenvolvedor: Lucas Rocha
+          </p>
+          <div className="flex gap-4">
+            <a
+              href="https://github.com/DevLucasRocha/smart-credito"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-stone-600 hover:text-brand-500 transition-colors dark:text-slate-300"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lucas-hssrs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-stone-600 hover:text-brand-500 transition-colors dark:text-slate-300"
+            >
+              <Linkedin size={20} />
+            </a>
+          </div>
+        </div>
+      </footer>    </div>
   );
 };
 
