@@ -1,4 +1,4 @@
-# SimulaCred | Plataforma de Captação e Conversão B2B2C
+# 🏦 SimulaCred | Plataforma de Captação e Conversão B2B2C
 
 Uma aplicação Front-end robusta e responsiva desenvolvida para simulação de crédito e captação qualificada de leads financeiros. Construída com foco em alta conversão, experiência do usuário (UI/UX) e código modular preparado para escala corporativa.
 
@@ -6,8 +6,8 @@ Uma aplicação Front-end robusta e responsiva desenvolvida para simulação de 
 
 O SimulaCred resolve um gargalo crítico no mercado de correspondentes bancários: a atração de clientes através de transparência e agilidade. O sistema oferece duas interfaces dinâmicas (Views):
 
-1. **Visão do Cliente (Conversão):** Uma Landing Page intuitiva com cálculo de juros em tempo real e formulário otimizado para retenção do lead via WhatsApp.
-2. **Visão do Gestor (Dashboard):** Painel administrativo para acompanhamento de métricas de vendas, ticket médio e volume de captação através de gráficos dinâmicos.
+* **Visão do Cliente (Conversão):** Uma Landing Page intuitiva com cálculo de juros em tempo real e formulário otimizado para retenção do lead via WhatsApp.
+* **Visão do Gestor (Dashboard):** Painel administrativo para acompanhamento de métricas de vendas, ticket médio e volume de captação através de gráficos dinâmicos.
 
 ## 🛠️ Stack Tecnológica
 
@@ -27,10 +27,10 @@ O repositório está otimizado para pipelines de CI/CD e deploy contínuo em ser
 
 ## ⚙️ Como executar localmente
 
-Siga os passos abaixo para rodar a aplicação em seu ambiente de desenvolvimento:
-
-1. Clone O repositório;
-2. Na raiz da pasta simula-cred digite:
+1. Clone este repositório em sua máquina.
+2. Acesse a raiz da pasta `simula-cred` através do seu terminal.
+3. Instale as dependências do projeto:
+   ```bash
    npm install
-   npm run build
-abra o link local host
+   npm run dev
+4. Clique no link do localhost gerado no terminal para visualizar a aplicação.
