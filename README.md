@@ -1,37 +1,36 @@
-# SimulaCred MVP
+# SimulaCred | Plataforma de Captação e Conversão B2B2C
 
-## Contexto do Problema
-O SimulaCred ataca um desafio comum em operacoes financeiras: transformar trafego em leads qualificados para emprestimos com alta velocidade comercial. Este MVP entrega uma jornada de simulacao orientada a conversao para o cliente final e uma visao executiva para o gestor.
+Uma aplicação Front-end robusta e responsiva desenvolvida para simulação de crédito e captação qualificada de leads financeiros. Construída com foco em alta conversão, experiência do usuário (UI/UX) e código modular preparado para escala corporativa.
 
-## Stack Tecnologica
-- React
-- TypeScript
-- TailwindCSS
-- Lucide-React
-- Recharts
-- Vite
+## 🚀 Visão Geral do Produto
 
-## Como Executar Localmente
-1. Instale dependencias:
-   ```bash
+O SimulaCred resolve um gargalo crítico no mercado de correspondentes bancários: a atração de clientes através de transparência e agilidade. O sistema oferece duas interfaces dinâmicas (Views):
+
+1. **Visão do Cliente (Conversão):** Uma Landing Page intuitiva com cálculo de juros em tempo real e formulário otimizado para retenção do lead via WhatsApp.
+2. **Visão do Gestor (Dashboard):** Painel administrativo para acompanhamento de métricas de vendas, ticket médio e volume de captação através de gráficos dinâmicos.
+
+## 🛠️ Stack Tecnológica
+
+O projeto foi construído utilizando as melhores práticas do ecossistema JavaScript/TypeScript, visando performance e manutenibilidade:
+
+* **Framework:** React + Vite (Fast Refresh e build otimizado)
+* **Linguagem:** TypeScript (Tipagem estática e interfaces rigorosas)
+* **Estilização:** Tailwind CSS (Mobile-first, utilitários escaláveis e Dark Mode nativo)
+* **Visualização de Dados:** Recharts (Gráficos interativos no painel do gestor)
+* **Ícones:** Lucide-React
+
+## ☁️ Arquitetura e Deploy
+
+O front-end foi arquitetado de forma agnóstica, permitindo fácil integração via APIs RESTful ou GraphQL com backends robustos (como Golang, Node.js ou Python).
+
+O repositório está otimizado para pipelines de CI/CD e deploy contínuo em serviços de Edge Computing (como Cloudflare Pages), ou instâncias nativas em provedores Cloud como **AWS, Microsoft Azure ou Oracle Cloud Infrastructure (OCI)**.
+
+## ⚙️ Como executar localmente
+
+Siga os passos abaixo para rodar a aplicação em seu ambiente de desenvolvimento:
+
+1. Clone O repositório;
+2. Na raiz da pasta simula-cred digite:
    npm install
-   ```
-2. Rode o ambiente de desenvolvimento:
-   ```bash
-   npm run dev
-   ```
-3. Acesse:
-   `http://localhost:5173`
-
-## Visoes do Produto
-- **Visao do Cliente:** Landing page com simulador de emprestimo, captura de lead e CTA via WhatsApp.
-- **Visao do Gestor:** Dashboard B2B com metricas, graficos e tabela de ultimos leads.
-
-## Visao de Arquitetura Cloud (AWS/OCI)
-Este front-end foi estruturado como MVP de captacao escalavel, preparado para integracao com backend orientado a APIs. Em evolucao full stack, a arquitetura pode operar em AWS ou OCI com:
-- API Gateway + servicos de aplicacao (containers/serverless)
-- persistencia de leads e trilha de eventos para BI/CRM
-- filas para automacoes comerciais (WhatsApp/Email)
-- observabilidade e tracing para monitoramento de funil
-
-Essa base permite crescimento gradual do produto mantendo modularidade, tipagem forte e rapidez de iteracao.
+   npm run build
+abra o link local host
